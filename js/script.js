@@ -1,3 +1,6 @@
+const display = document.querySelector('.results');
+const numbers = document.querySelectorAll('.number');
+
 function add(nbr1, nbr2) {
     return nbr1 + nbr2;
 }
@@ -38,3 +41,21 @@ function operate(operator, nbr1, nbr2) {
 }
 
 console.log(operate('+', 5.5, 20));
+
+function displayNumber(e) {
+    if (display.innerText === '0' && e.target.innerText === '0') {
+        display.innerText = '0';
+        return;
+    } else if (
+        display.innerText === '0' &&
+        e.target.innerText !== '0' &&
+        e.target.innerText !== '.'
+    ) {
+        display.innerText = '';
+    }
+    display.append(e.target.innerText);
+}
+
+numbers.forEach((number) => {
+    number.addEventListener('click', displayNumber);
+});
