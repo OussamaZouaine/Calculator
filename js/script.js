@@ -57,12 +57,6 @@ function operate(operator, nbr1, nbr2) {
     }
 }
 
-// display.addEventListener('DOMSubtreeModified', () => {
-//     let currentValue = display.innerText;
-//     currentValue = currentValue.replace(/\./g, '');
-//     display.innerText = currentValue;
-// });
-
 function displayNumber(e) {
     if (e.target.innerText === '.') {
         pointCLicked++;
